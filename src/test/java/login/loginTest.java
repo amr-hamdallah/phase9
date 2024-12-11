@@ -1,4 +1,4 @@
-package t;
+package login;
 
 import Base.BaseTest;
 import org.openqa.selenium.By;
@@ -7,10 +7,10 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 
 
-public class T extends BaseTest {
+public class loginTest extends BaseTest {
 
     @Test
-    public void t1() {
+    public void testSuccssfull() {
 
         driver.findElement(By.linkText("Form Authentication")).click();
         driver.findElement(By.id("username")).sendKeys("tomsmith");
@@ -24,7 +24,7 @@ public class T extends BaseTest {
 
 
     @Test
-    public void t2() {
+    public void testInvaliadUserName() {
 
         driver.findElement(By.linkText("Form Authentication")).click();
         driver.findElement(By.id("username")).sendKeys("amr");
@@ -38,7 +38,7 @@ public class T extends BaseTest {
     }
 
     @Test
-    public void t3() {
+    public void testInvaliadPassWord() {
 
         driver.findElement(By.linkText("Form Authentication")).click();
         driver.findElement(By.id("username")).sendKeys("tomsmith");
