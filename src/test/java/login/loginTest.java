@@ -9,8 +9,8 @@ import static org.testng.Assert.assertTrue;
 
 public class loginTest extends BaseTest {
 
-    @Test
-    public void testSuccssfull() {
+    @Test(priority = 1)
+    public void testSuccssfullLogin() {
 
         driver.findElement(By.linkText("Form Authentication")).click();
         driver.findElement(By.id("username")).sendKeys("tomsmith");
@@ -22,8 +22,7 @@ public class loginTest extends BaseTest {
 
     }
 
-
-    @Test
+    @Test(priority = 2)
     public void testInvaliadUserName() {
 
         driver.findElement(By.linkText("Form Authentication")).click();
@@ -34,10 +33,9 @@ public class loginTest extends BaseTest {
         String expectedresult = "Your username is invalid!";
         assertTrue(actualresult.contains(expectedresult));
 
-
     }
 
-    @Test
+    @Test(priority = 3)
     public void testInvaliadPassWord() {
 
         driver.findElement(By.linkText("Form Authentication")).click();
